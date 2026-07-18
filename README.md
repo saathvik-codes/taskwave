@@ -36,3 +36,17 @@ WebSocket endpoint: `ws://localhost:8150/ws` (STOMP, subscribe to `/topic/boards
 5. `POST /api/v1/tasks/{id}/comments` — broadcasts live
 6. `GET /api/v1/teams/{teamId}/boards/{boardId}/activity` — full history (same
    events a live-subscribed client would have already received)
+
+## Frontend
+
+`frontend/` is a Next.js + Tailwind Kanban UI: click "Create demo board" to spin
+up a team/board via the API, add tasks, click through TODO → IN_PROGRESS →
+REVIEW → DONE, and watch the right-hand Live Activity panel update instantly
+over the same WebSocket connection the backend broadcasts on.
+
+```
+cd frontend
+cp .env.local.example .env.local
+npm install
+npm run dev   # http://localhost:3000
+```

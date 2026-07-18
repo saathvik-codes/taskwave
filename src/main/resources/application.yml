@@ -1,0 +1,21 @@
+server:
+  port: 8150
+
+spring:
+  application:
+    name: taskwave
+  datasource:
+    url: jdbc:postgresql://localhost:5544/taskwave_db
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/taskwave_db}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
